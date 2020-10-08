@@ -68,6 +68,11 @@ pub fn flaming_fir_config() -> Result<ChainSpec, String> {
 	ChainSpec::from_json_bytes(&include_bytes!("../res/flaming-fir.json")[..])
 }
 
+// Geek testnet generator
+pub fn geek_testnet_config() -> Result<ChainSpec, String> {
+	ChainSpec::from_json_bytes(&include_bytes!("../res/testnet.json")[..])
+}
+
 fn session_keys(
 	grandpa: GrandpaId,
 	babe: BabeId,
@@ -347,7 +352,7 @@ pub fn development_config() -> ChainSpec {
 		None,
 		None,
 		Default::default(),
-	)
+	)	
 }
 
 fn local_testnet_genesis() -> GenesisConfig {
