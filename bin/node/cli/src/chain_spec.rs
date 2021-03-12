@@ -227,16 +227,16 @@ pub fn testnet_genesis(
 		vec![
 			get_account_id_from_seed::<sr25519::Public>("Alice"),
 			get_account_id_from_seed::<sr25519::Public>("Bob"),
-			get_account_id_from_seed::<sr25519::Public>("Charlie"),
-			get_account_id_from_seed::<sr25519::Public>("Dave"),
-			get_account_id_from_seed::<sr25519::Public>("Eve"),
-			get_account_id_from_seed::<sr25519::Public>("Ferdie"),
+			// get_account_id_from_seed::<sr25519::Public>("Charlie"),
+			// get_account_id_from_seed::<sr25519::Public>("Dave"),
+			// get_account_id_from_seed::<sr25519::Public>("Eve"),
+			// get_account_id_from_seed::<sr25519::Public>("Ferdie"),
 			get_account_id_from_seed::<sr25519::Public>("Alice//stash"),
 			get_account_id_from_seed::<sr25519::Public>("Bob//stash"),
-			get_account_id_from_seed::<sr25519::Public>("Charlie//stash"),
-			get_account_id_from_seed::<sr25519::Public>("Dave//stash"),
-			get_account_id_from_seed::<sr25519::Public>("Eve//stash"),
-			get_account_id_from_seed::<sr25519::Public>("Ferdie//stash"),
+			// get_account_id_from_seed::<sr25519::Public>("Charlie//stash"),
+			// get_account_id_from_seed::<sr25519::Public>("Dave//stash"),
+			// get_account_id_from_seed::<sr25519::Public>("Eve//stash"),
+			// get_account_id_from_seed::<sr25519::Public>("Ferdie//stash"),
 		]
 	});
 	initial_authorities.iter().for_each(|x|
@@ -336,16 +336,77 @@ pub fn testnet_genesis(
 	}
 }
 
+// fn development_config_genesis() -> GenesisConfig {
+// 	testnet_genesis(
+// 		vec![
+// 			authority_keys_from_seed("Alice"),
+// 		],
+// 		get_account_id_from_seed::<sr25519::Public>("Alice"),
+// 		None,
+// 		true,
+// 	)
+// }
+
 fn development_config_genesis() -> GenesisConfig {
-	testnet_genesis(
-		vec![
-			authority_keys_from_seed("Alice"),
-		],
-		get_account_id_from_seed::<sr25519::Public>("Alice"),
-		None,
-		true,
-	)
-}
+		testnet_genesis(
+			vec![(	
+				// 5EtFnZpGf79UffTuEHXsRpxYZ1YgphHj2Njqxzsdbo1Y9c2G	
+				hex!["7cbc7c034e8185ed5fd0bc3fa1354d186f526c1787cebfa6b5ebf9c492ce544e"].into(),	
+				// 5FUTyeT2HVknctr4FfZHTWpvYMpjHuF3TonbVtxShcAxSJna	
+				hex!["324f6889c125419a1a021224fef6e5a51dfbc579f10343f88cc145e1e9879014"].into(),
+				
+				// 5CQaCJPgYSF6XcuDqbs9euUye2djThqoxC37nZZJSGrWHixN	
+				hex!["0f271dfb50629b293c1498889871b6da7adedf14e13b8984557cf5c739fca21b"].unchecked_into(),
+
+				// 5Ehp3Q1emKPi6xLuyHzEQEe2o5bCE6FWW7CG32TFNdaq96FA	
+				hex!["74c55e0b9570a3c267f7aaeb8625cb29bf1d5431f2dd2192c55105b21fab255f"].unchecked_into(),				
+				hex!["74c55e0b9570a3c267f7aaeb8625cb29bf1d5431f2dd2192c55105b21fab255f"].unchecked_into(),	
+				hex!["74c55e0b9570a3c267f7aaeb8625cb29bf1d5431f2dd2192c55105b21fab255f"].unchecked_into(),	
+			),(	
+				// 5DCfqi3UAe3stLkut92kuApciD7RMnszrE8yqKLVrssgvEky	
+				hex!["324f6889c125419a1a021224fef6e5a51dfbc579f10343f88cc145e1e9879014"].into(),	
+				// 5HgaqnQq3pgw1LP3Nhuv3y9qnrWEZS6UHCD6ZhMCC4vUnoNV	
+				hex!["f88a62e849296962966f764ac0e8a115f15c0b124d0137c42cd3b7247ede6f54"].into(),	
+				
+				// 5H149QLoRvA675GB5gMsjSNsNy72L9Z4iUFQtkACkuZXJrTP	
+				hex!["da647ba03c2774c3a7ae3032b63131f5289f9253b046b5cc2a2c3388a0261646"].unchecked_into(),	
+
+				// 5E4Bj8VNpituA9qyjM8fNWwUv6zu13HtM4BcpkXX6BsSFXYe	
+				hex!["58130a549fa4aba0c8fb69436c9d112935c0c9a18024e18a452c24679378a442"].unchecked_into(),			
+				hex!["58130a549fa4aba0c8fb69436c9d112935c0c9a18024e18a452c24679378a442"].unchecked_into(),	
+				hex!["58130a549fa4aba0c8fb69436c9d112935c0c9a18024e18a452c24679378a442"].unchecked_into(),	
+			),(	
+				// 5HdHJBbAB4VD85a735EWwsAWmoWhUn2GWzpDt1nQ4XF4yQui	
+				hex!["762a62a7adcb1be3f103cc9cc94bca4e9c4349b14078dfe5ae9eeee50f99251f"].into(),	
+				// 5Eje6g5eXZii2unPhvyYWAMt8ZzQp31vF6rSsNjoGwhsQ6ss	
+				hex!["2af3cb52f1d2349b7d85245217d0e63142d714400697a3f838561d028b6bc545"].into(),	
+				
+				// 5CSiLBR6wARi1F2qzE6MM7zGLi6B3S7GrqxVVBYiRPwpCuRq	
+				hex!["10c8fee3b96b9bad677bf3d97cbf1874320836ddd14d88e50b4a65227e1cb803"].unchecked_into(),
+
+				// 5ETit4aiGMKUN2fVGjo5bhiQAApfFu1TpPCo6n3ycNLoXbHR	
+				hex!["6a068ef3797cc1849637a70435d90b3b8a893c8d95d2ec239070f50be2ce4d2b"].unchecked_into(),			
+				hex!["6a068ef3797cc1849637a70435d90b3b8a893c8d95d2ec239070f50be2ce4d2b"].unchecked_into(),	
+				hex!["6a068ef3797cc1849637a70435d90b3b8a893c8d95d2ec239070f50be2ce4d2b"].unchecked_into(),	
+			),(	
+				// 5D32Hnw6XbM83JMkrAKfXU6QutEDXx7bjDQThysUuXyEoFvf	
+				hex!["2af3cb52f1d2349b7d85245217d0e63142d714400697a3f838561d028b6bc545"].into(),	
+				// 5Cqj652PzfFL2QbD4RqJaMDHn13t8CNbsQdbRBW57nJHoQW1	
+				hex!["22562ff3a8063828334b11ba8baa3a6fd8de627f702c0c3617bede49067e1c74"].into(),	
+				
+				// 5CQBXVKhHeJjM75M6AWdHnC4bcDLMHeENNZo4BRb4Wo3Pd6Z	
+				hex!["0edace4fe2ef051a11009229a667b7eb7a98ff9cf0c004272404820e13c4ad66"].unchecked_into(),
+
+				// 5F4r6rRZYHrPrXuiVXi1EhrZqz53w3RyBaC1gwdUzm4CWp1E	
+				hex!["84d07439b0757ce04bc23c4a6a19bc553d980ecad0bf313ecff98a20bf810277"].unchecked_into(),			
+				hex!["84d07439b0757ce04bc23c4a6a19bc553d980ecad0bf313ecff98a20bf810277"].unchecked_into(),	
+				hex!["84d07439b0757ce04bc23c4a6a19bc553d980ecad0bf313ecff98a20bf810277"].unchecked_into(),	
+			)],
+			hex!["ecb0d0d48a6cd8ca2c5b99dde24361746915e31a1eac06d3d62ace8e2941bc7d"].into(),
+			None,
+			true,
+		)
+	}
 
 /// Development config (single validator Alice)
 pub fn development_config() -> ChainSpec {

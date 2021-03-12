@@ -24,3 +24,5 @@ rls*.log
 .cargo/
 .cargo-remote.toml
 *.bin
+note.txt
+dev.json
